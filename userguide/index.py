@@ -21,7 +21,7 @@ dash.layout = div([
         '$ git clone -b skeleton https://github.com/chriddyp/messin.git',
         '$ cd messin',
         '$ pip install -r requirements.txt',
-        '$ cd messin/helloworld',
+        '$ cd helloworld',
         '$ python helloworld.py',
         ' * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)'])),
 
