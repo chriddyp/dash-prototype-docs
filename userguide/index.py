@@ -41,7 +41,7 @@ dash.layout = div([
         div(className='six columns', content=[
             div([
                 iframe(
-                    src="http://127.0.0.1:8080/",
+                    src="https://morning-dawn-5773.herokuapp.com/",
                     width='100%',
                     height='100%',
                     style={'border': 'none'})
