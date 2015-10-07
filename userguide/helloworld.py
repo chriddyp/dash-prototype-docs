@@ -33,7 +33,7 @@ component_list = [
 ]
 
 dash.layout = div([
-    h2("so what makes up a dash app?"),
+    h2("so, what makes up a dash app?"),
 
     b('setup'),
 
@@ -46,8 +46,9 @@ dash.layout = div([
     hr(),
 
     div([
-        p(['''Dash apps are composed of two parts.
-        The layout describes what the page will look like.
+        p(['''The first part of a Dash app is the ''',
+        code('dash.layout'),
+        ''', and this is assignment describes what the page will look like.
         The layout is rendered as HTML and each HTML element
         has an associated class in ''', code('dash.components'),
             '''with a matching name.''']),
