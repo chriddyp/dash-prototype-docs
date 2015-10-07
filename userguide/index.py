@@ -18,7 +18,7 @@ dash.layout = div([
 
     pre('\n'.join([
         '$ pip install dash.ly --upgrade',
-        '$ git clone https://github.com/chriddyp/messin.git'
+        '$ git clone https://github.com/chriddyp/messin.git',
         '$ cd messin',
         '$ pip install -r requirements.txt',
         '$ cd messin/helloworld',
