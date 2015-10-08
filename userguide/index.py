@@ -56,7 +56,8 @@ dash.layout = div([
     h5('tutorials'),
     ol([
         li([a(link[0], href="/{}".format(link[1]))]) for link in [
-            ('part 1 - creating html with dash', 'hello-world')]
+            ('part 1 - designing the layout of your app or, '
+             'how dash abstracts HTML', 'hello-world')]
     ])
 
 ], className='container')
