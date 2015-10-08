@@ -16,22 +16,24 @@ dash.layout = div([
 
     h3('quickstart'),
 
-    pre('\n'.join([
+    Highlight('\n'.join([
         '$ pip install dash.ly --upgrade',
         '$ git clone -b skeleton https://github.com/chriddyp/messin.git',
         '$ cd messin',
         '$ pip install -r requirements.txt',
         '$ cd helloworld',
         '$ python helloworld.py',
-        ' * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)'])),
+        ' * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)']),
+        className="bash"),
 
     hr(),
 
     div(className="row", content=[
         div(className='six columns', content=[
             b('helloworld.py'),
-            pre(
+            Highlight(
                 id="helloworld",
+                className="python",
                 # TODO: cache
                 content=requests.get(
                     'https://raw.githubusercontent.com/chriddyp/messin/'
@@ -53,6 +55,8 @@ dash.layout = div([
 
     ]),
 
+    hr(),
+
     h5('tutorials'),
     ol([
         li([a(link[0], href="/{}".format(link[1]))]) for link in [
@@ -64,4 +68,4 @@ dash.layout = div([
                 const['dash.react'])]
     ])
 
-], className='container')
+], className="container", style={'width': '95%'})

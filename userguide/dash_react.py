@@ -27,7 +27,7 @@ dash.layout = div([
     ]),
     div([
         div([
-            pre(id='layout-1', style={'overflowY': 'scroll'})
+            Highlight(id='layout-1', style={'overflowY': 'scroll'}, className="python")
         ], className="eight columns",
             style={'borderRight': 'thin lightgrey solid'}),
         div([
@@ -41,7 +41,7 @@ dash.layout = div([
         p([
             'The decorated function (in this case',
             code('display_dropdown_value'),
-            ' must return a ', code('dict'),
+            ') must return a ', code('dict'),
             ' with ', i('any'),
             ' of the ', code('component_to_update'), ' attributes. ',
             "In this case, we're just updating the ", code('content'),
@@ -55,7 +55,7 @@ dash.layout = div([
     div(id='layout-2-rendered'), hr(),
     div([
         div([
-            pre(id='layout-2', style={'overflowY': 'scroll'})
+            Highlight(id='layout-2', style={'overflowY': 'scroll'}, className="python")
         ], className="twelve columns")
     ], className="row"),
 
@@ -68,7 +68,7 @@ dash.layout = div([
     div(id='layout-3-rendered'), hr(),
     div([
         div([
-            pre(id='layout-3', style={'overflowY': 'scroll'})
+            Highlight(id='layout-3', style={'overflowY': 'scroll'}, className="python")
         ], className="twelve columns")
     ], className="row"),
 

@@ -44,7 +44,7 @@ dash.layout = div([
 
     b('quickstart'),
 
-    pre('\n'.join([
+    Highlight('\n'.join([
         'from dash import Dash',
         'from dash.components import div, h5',
         '',
@@ -54,7 +54,7 @@ dash.layout = div([
         '',
         'if __name__ == "__main__":',
         '    dash.server.run(debug=True)'
-    ])),
+    ]), className="python",),
 
     hr(),
 
@@ -70,26 +70,26 @@ dash.layout = div([
     div([
         div([
             b('dash code in python'),
-            pre('\n'.join([
+            Highlight('\n'.join([
                 'dash.layout = div([',
                 '   h5("consumer complaints"),',
                 '   div("Each week thousands of consumers\' complaints "',
                 '       "about financial products are "',
                 '       "sent to companies for response.")'
                 '])'
-            ]), style={'overflowY': 'scroll'}),
+            ]), style={'overflowY': 'scroll'}, className="python"),
 
 
         ], className='six columns'),
 
         div([
             b('HTML code that is generated'),
-            pre(['\n'.join([
+            Highlight(['\n'.join([
                 '<div>',
                 '   <h5>consumer complaints</h5>',
                 '   <div>{}</div>'.format(complaint_text),
                 '</div>'])
-            ], style={"whiteSpace": "pre-wrap"})
+            ], style={"whiteSpace": "pre-wrap"}, className="html")
         ], className='six columns')
     ], className='row'),
 
@@ -107,27 +107,27 @@ dash.layout = div([
     div([
         div([
             b('dash code in python'),
-            pre('\n'.join([
+            Highlight('\n'.join([
                 'dash.layout = div([',
                 '   h5("consumer complaints"),',
                 '   div("Each week thousands of consumers\' complaints "',
                 '       "about financial products are "',
                 '       "sent to companies for response.", ',
                 '       style={{"borderLeft": "lightgrey solid"}})',
-                '], id="container")'
+                '], id="container", className="python")'
             ]))
         ], className='six columns'),
 
         div([
             b('HTML code that is generated'),
-            pre(['\n'.join([
+            Highlight(['\n'.join([
                 '<div id="container">',
                 '   <h5>consumer complaints</h5>',
                 '   <div style="border-left: lightgrey solid;">',
                 '   {}'.format(complaint_text),
                 '   </div>',
                 '</div>'])
-            ], style={"whiteSpace": "pre-wrap"})
+            ], style={"whiteSpace": "pre-wrap"}, className="html")
         ], className='six columns'),
     ], className='row'),
 
@@ -140,18 +140,18 @@ dash.layout = div([
                 code('class'),
                 'to specify HTML\'s ', code('class'),
                 ' attribute. For example',
-                pre('div("my div", className="tiny") # rendered as: <div class="tiny">my div</div>')]),
+                Highlight('div("my div", className="tiny") # rendered as: <div class="tiny">my div</div>', className="python")]),
             li([
                 'Specify HTML\'s inline ', code('style'), ' with a ',
                 code('dict'), '. ', 'CSS style attributes, like ',
                 code('color'), code('border-left'), code('font-size'),
                 ', are specified with their hyphen\'s removed and camelCased. '
                 'For example, ',
-                pre('div("my div", style={"color": "blue", '
-                    '"borderLeft": "thin grey solid", "fontSize": 12})'),
+                Highlight('div("my div", style={"color": "blue", '
+                    '"borderLeft": "thin grey solid", "fontSize": 12})', className="python"),
                 p(' is translated to HTML as: '),
-                pre('<div style="color: blue; border-left: thin grey solid; '
-                    'font-size: 12px">my div</div>')
+                Highlight('<div style="color: blue; border-left: thin grey solid; '
+                    'font-size: 12px">my div</div>', className="html")
             ])
         ])
     ], className='row'),
@@ -167,7 +167,7 @@ dash.layout = div([
 
     div([
         div(className="row", content=[
-            pre(repr(component)),
+            Highlight(repr(component), className="python"),
             component,
             hr()
         ]) for component in component_list
@@ -178,19 +178,20 @@ dash.layout = div([
            ' and this describes the content of the HTML element. The ', code('content'),
            ' can be a string, another element, or a list of elements and/or strings.']),
 
-        pre('''div('my text')      # rendered as: <div>my text</div>
+        Highlight('''div('my text')      # rendered as: <div>my text</div>
 div(p('my text'))   # TODO: does this actually work? rendered as: <div><p>my text<p></div>
 div(['my text'])    # rendered as: <div>my text</div>
 div([h1('my title'), h4('subtitle')])               # rendered as: <div><h1>my title</h1><h4>subtitle</h4></h1></div>
 div([h1('my title'), h4('subtitle'), 'body text'])  # rendered as <div><h1>my title</h1><h4>subtitle</h4></h1>body text</div>
-'''),
+''', className="python"),
 
         p(['Like the rest of the attributes, ', code('content'), ' is a named argument. Since it is the first named argument',
             ' it is often specified implicitly without a name. These call signatures are all equivalent: ']),
 
-        pre('''div('my text', className='row')         # rendered as: <div class="row">my text</div>
+        Highlight('''div('my text', className='row')         # rendered as: <div class="row">my text</div>
 div(content='my text', className='row') # rendered as: <div class="row">my text</div>
-div(className='row', content='my text') # rendered as: <div class="row">my text</div>''')
+div(className='row', content='my text') # rendered as: <div class="row">my text</div>''',
+className="python")
     ]),
 
     hr(),
@@ -198,7 +199,7 @@ div(className='row', content='my text') # rendered as: <div class="row">my text<
     h5('example'),
 
 
-    div([pre("""
+    div([Highlight("""
 from dash import Dash
 from dash.components import div, h2, blockquote
 
@@ -214,7 +215,7 @@ dash.layout = {sample_app_string}
 
 if __name__ == "__main__":
     dash.server.run(port=5000, debug=True)
-""", id='sample-app-pre')], className='row'),
+""", id='sample-app-pre', className="python")], className='row'),
 
     div([
         'To run this app: ',
@@ -224,11 +225,11 @@ if __name__ == "__main__":
             '$ cd messin',
             '$ pip install -r requirements.txt',
             '$ cd helloworld'
-        ])),
+        ]), className="bash"),
         'then save this file as e.g.', code('myapp.py'), ' and run ',
         pre('\n'.join([
             '$ python myapp.py',
-            ' * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)']))
+            ' * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)']), className="bash")
     ]),
     div([
         p('Visit http://127.0.0.1:5000/ in your browser '

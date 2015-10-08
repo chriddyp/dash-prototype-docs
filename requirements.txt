@@ -1,4 +1,4 @@
-dash.ly==0.10.8
+dash.ly==0.10.9
 Flask==0.10.1
 gunicorn==19.3.0
 itsdangerous==0.24
