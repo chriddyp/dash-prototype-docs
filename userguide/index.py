@@ -3,7 +3,7 @@ import requests
 from dash import Dash
 from dash.components import *
 
-from userguide import app
+from userguide import app, const
 
 dash = Dash(server=app, url_namespace='')
 
@@ -56,8 +56,12 @@ dash.layout = div([
     h5('tutorials'),
     ol([
         li([a(link[0], href="/{}".format(link[1]))]) for link in [
-            ('part 1 - designing the layout of your app or, '
-             'how dash abstracts HTML', 'hello-world')]
+            ('designing the layout of your app or, '
+             'how dash abstracts HTML', const['layout']),
+
+            ('making your apps interactive or, '
+             'binding python callbacks to user inputs',
+                const['dash.react'])]
     ])
 
 ], className='container')

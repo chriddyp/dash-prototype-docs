@@ -1,9 +1,9 @@
 from dash import Dash
 from dash.components import *
 
-from userguide import app
+from userguide import app, const
 
-dash = Dash(server=app, url_namespace='/hello-world')
+dash = Dash(server=app, url_namespace='/' + const['layout'])
 
 complaint_text = "Each week thousands of consumers' complaints about financial products are sent to companies for response."
 
