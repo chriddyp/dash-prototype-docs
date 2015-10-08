@@ -46,7 +46,7 @@ dash.layout = div([
 
     pre('\n'.join([
         'from dash import Dash',
-        'from dash.components import *',
+        'from dash.components import div, h5',
         '',
         'dash = Dash(__name__)',
         '',
@@ -99,7 +99,7 @@ dash.layout = div([
             a('many more',
               href="https://facebook.github.io/react/docs/"
                    "tags-and-attributes.html#html-attributes"),
-            ' are specified as keyword arguments in the ',
+            ', are specified as keyword arguments in the ',
             code('dash.components'),
             ' classes and translated to HTML.'])
     ], className='row'),
@@ -133,8 +133,8 @@ dash.layout = div([
 
     div([
         hr(),
-        p('The translation from Python ', code('dash.components'), 'classes '
-          'to HTML is 1-1 with two exceptions: '),
+        p(['The translation from Python from ', code('dash.components'),
+            'classes to HTML is 1-1 with two exceptions: ']),
         ul([
             li(['Use the keyword argument ', code('className'), 'instead of ',
                 code('class'),
