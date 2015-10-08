@@ -67,7 +67,9 @@ dash.layout = div([
 
     h5('user guide'),
     ol([
-        li([a(link[0], href="/{}".format(link[1]))]) for link in [
+        li([a(link[0],
+              target="_blank",
+              href="/{}".format(link[1]))]) for link in [
             ('designing the layout of your app or, '
              'how dash abstracts HTML', const['layout']),
 
