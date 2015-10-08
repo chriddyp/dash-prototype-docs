@@ -57,7 +57,15 @@ dash.layout = div([
 
     hr(),
 
-    h5('tutorials'),
+    h5('examples'),
+    ul([
+        li([a(link[0],
+              target="_blank",
+              href="/{}".format(link[1]))]) for link in [
+            ('updating graphs with sliders', const['slider-example'])]
+    ]),
+
+    h5('user guide'),
     ol([
         li([a(link[0], href="/{}".format(link[1]))]) for link in [
             ('designing the layout of your app or, '
