@@ -8,8 +8,8 @@ dash = Dash(server=app, url_namespace='/hello-world')
 complaint_text = "Each week thousands of consumers' complaints about financial products are sent to companies for response."
 
 import pandas as pd
-df = pd.read_csv('/Users/chriddyp/Repos/reactworld'
-                 '/examples/consumer_complaints_50k.csv',
+df = pd.read_csv('https://raw.githubusercontent.com/chriddyp/'
+                 'messin/master/examples/consumer_complaints_50k.csv',
                  index_col='Date sent to company', parse_dates=True)
 most_common_complaints = df['Company'].value_counts()
 
