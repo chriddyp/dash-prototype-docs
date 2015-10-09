@@ -75,7 +75,7 @@ def update_graph(stock_ticker_input):
     'graph' with the result.
     """
     ticker = stock_ticker_input.value.lower()
-    ticker not in tickers:
+    if ticker not in tickers:
         raise Exception
     df = web.DataReader(ticker, 'yahoo', dt.datetime(2014, 1, 1),
                         dt.datetime(2015, 4, 15))
