@@ -29,6 +29,7 @@ from copy import deepcopy
 import json
 
 # Download the contour plot from https://plot.ly
+py.sign_in("PlotBot", "da05144j7i")
 fig = py.get_figure("https://plot.ly/~chris/5496")
 margin = {'l': 20, 'r': 20, 'b': 20, 't': 20}
 fig['layout'].update({'margin': margin})
