@@ -6,6 +6,7 @@ Jinja2==2.8
 MarkupSafe==0.23
 numpy==1.10.0.post2
 pandas==0.16.2
+pandas-datareader==0.1.1
 plotly==1.8.6
 python-dateutil==2.4.2
 pytz==2015.6

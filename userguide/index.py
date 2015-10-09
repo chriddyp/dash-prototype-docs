@@ -63,8 +63,11 @@ dash.layout = div([
               target="_blank",
               href="/{}".format(link[1]))]) for link in [
             ('updating graphs with sliders', const['slider-example']),
-            ('click events on graphs, a contour plot explorer',
-             const['click-and-hover'])]
+            ('linking graphs with click events, a contour plot explorer',
+             const['click-and-hover']),
+            ('updating graphs and tables with a text input, '
+             'searching and graphing yahoo finance', const['text-input'])
+        ]
     ]),
 
     h5('user guide'),
@@ -78,7 +81,8 @@ dash.layout = div([
             ('making your apps interactive or, '
              'binding python callbacks to user inputs',
                 const['dash.react']),
-            ('click events on graphs', const['click-and-hover'])]
+            ('click events on graphs', const['click-and-hover'])
+        ]
     ])
 
 ], className="container", style={'width': '95%'})
