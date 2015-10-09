@@ -62,7 +62,8 @@ dash.layout = div([
         li([a(link[0],
               target="_blank",
               href="/{}".format(link[1]))]) for link in [
-            ('updating graphs with sliders', const['slider-example'])]
+            ('updating graphs with sliders', const['slider-example']),
+            ('click events on graphs', const['click-and-hover'])]
     ]),
 
     h5('user guide'),
@@ -75,7 +76,8 @@ dash.layout = div([
 
             ('making your apps interactive or, '
              'binding python callbacks to user inputs',
-                const['dash.react'])]
+                const['dash.react']),
+            ('click events on graphs', const['click-and-hover'])]
     ])
 
 ], className="container", style={'width': '95%'})
