@@ -73,13 +73,8 @@ def update_graph(stock_ticker_input):
     if ticker not in tickers:
         return {'figure': {}}
     else:
-        try:
-            df = web.DataReader(ticker, 'yahoo', dt.datetime(2014, 1, 1),
-                                dt.datetime(2015, 4, 15))
-        except:
-            print traceback.format_exc()
-            return
-
+        df = web.DataReader(ticker, 'yahoo', dt.datetime(2014, 1, 1),
+                            dt.datetime(2015, 4, 15))
         return {
             'figure': {
                 'data': [{
