@@ -69,28 +69,35 @@ layout = '''div([
 callbacks = '''
 @dash.react('graph', ['stock-ticker-input'])
 def update_graph(stock_ticker_input):
+    """ This function is called whenever the input
+    'stock-ticker-input' changes.
+    Query yahoo finance with the ticker input and update the graph
+    'graph' with the result.
+    """
     ticker = stock_ticker_input.value.lower()
-    if ticker not in tickers:
-        return {'figure': {}}
-    else:
-        df = web.DataReader(ticker, 'yahoo', dt.datetime(2014, 1, 1),
-                            dt.datetime(2015, 4, 15))
-        return {
-            'figure': {
-                'data': [{
-                    'x': df.index,
-                    'y': df['Close']
-                }],
-                'layout': {
-                    'title': ticker,
-                    'yaxis': {'title': 'Close'},
-                    'margin': {'b': 50, 'r': 10, 'l': 60}
-                }
+    df = web.DataReader(ticker, 'yahoo', dt.datetime(2014, 1, 1),
+                        dt.datetime(2015, 4, 15))
+    return {
+        'figure': {
+            'data': [{
+                'x': df.index,
+                'y': df['Close']
+            }],
+            'layout': {
+                'title': ticker,
+                'yaxis': {'title': 'Close'},
+                'margin': {'b': 50, 'r': 10, 'l': 60}
             }
         }
+    }
 
 @dash.react('ticker-table', ['stock-ticker-input'])
 def filter_tickers(stock_ticker_input):
+    """ This function is called whenever the input
+    'stock-ticker-input' changes.
+    Search the available tickers and update the table
+    'ticker-table' with the results.
+    """
     ticker = stock_ticker_input.value.lower()
     filtered_df = df_companies[
         df_companies.Name.str.contains(ticker, case=False) |
