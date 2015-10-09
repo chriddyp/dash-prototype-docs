@@ -63,9 +63,9 @@ dash.layout = div([
               target="_blank",
               href="/{}".format(link[1]))]) for link in [
             ('updating graphs with sliders', const['slider-example']),
-            ('linking graphs with click events, a contour plot explorer',
+            ('linking graphs with click events - a contour plot explorer',
              const['click-and-hover']),
-            ('updating graphs and tables with a text input, '
+            ('updating graphs and tables with a text input - '
              'searching and graphing yahoo finance', const['text-input'])
         ]
     ]),
